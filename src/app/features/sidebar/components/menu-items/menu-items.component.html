@@ -1,0 +1,35 @@
+<div class="menu-items">
+    <a class="menu-item" routerLink="{{ menuItems.Inicio.url }}" routerLinkActive="active">
+        <i class="pi {{ menuItems.Inicio.icon }}"></i>
+        <span> {{ menuItems.Inicio.title }} </span>
+    </a>
+
+    <p-divider></p-divider>
+
+    <span class="sub-item">Ventas</span>
+    <a class="menu-item" routerLink="{{ menuItems.Ventas.url }}" routerLinkActive="active">
+        <i class="pi {{ menuItems.Ventas.icon }}"></i>
+        <span> {{ menuItems.Ventas.title }} </span>
+    </a>
+
+    <p-divider></p-divider> 
+
+    <span class="sub-item">Proveedores</span>
+    <a class="menu-item"
+        *ngFor="let item of menuItems.Proveedores"
+        routerLink="{{ item.url }}"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >
+        <i class="pi {{ item.icon }}"></i>
+        <span> {{ item.title }} </span>
+    </a>
+
+    <p-divider></p-divider>
+
+    <span class="sub-item">Productos</span>
+    <a class="menu-item" routerLink="{{ menuItems.Productos.url }}" routerLinkActive="active">
+        <i class="pi {{ menuItems.Productos.icon }}"></i>
+        <span> {{ menuItems.Productos.title }} </span>
+    </a>
+</div>

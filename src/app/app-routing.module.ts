@@ -1,7 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ContentModule } from './features/content/content.module';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    loadChildren: () => import('./features/content/content.module').then(m => m.ContentModule),
+  },
+  {
+    path: '**',
+    redirectTo: '',
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
